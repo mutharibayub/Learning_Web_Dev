@@ -1,0 +1,12 @@
+body{
+    margin: 0;
+    background: white;
+}
+
+div{
+    display: inner-block;
+}
+
+#inner{
+    border-radius: 100%;
+}
