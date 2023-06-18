@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Send Anonymous Message</title>
+    </head>
+    <body>
+        <h1>Send Anonymous Message</h1>
+        <input type="text" id="message">
+        <button type="submit" id="sendMessageBtn">Submit</button>
+        <script>
+            const button = document.getElementById('sendMessageBtn');
+            button.addEventListener('click', async _ => {
+                const req = new XMLHttpRequest();
+                const message = document.getElementById("message").value;
+                req.open("GET", '/sendMessage/'+encodeURIComponent(message).replace(" ","+"));
+                <!-- req.onload = function(){}; -->
+                req.send();
+            });
+        </script>
+    </body>
+</html>
